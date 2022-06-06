@@ -1,0 +1,795 @@
+@use "common" as *;
+
+
+
+.border-bottom-xs-none {
+  @include mq(xs) {
+    border-bottom: none !important;
+  }
+}
+
+.link-page {
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    li {
+      display: inline-block;
+      a {
+        color: #57cadd;
+        font-size: 16px;
+        font-weight: 600;
+        &:hover {
+          color: #325369;
+        }
+        i {
+          color: #325369;
+          margin: 0 5px;
+        }
+      }
+    }
+  }
+}
+
+.link-icon {
+  position: relative;
+  display: inline-block;
+
+  &:hover {
+    ul {
+      display: block;
+    }
+  }
+
+  a {
+    i {
+      color: #57cadd;
+      font-size: 16px;
+      text-align: right;
+      @include mq(xs) {
+        margin-right: 7px;
+      }
+    }
+    span {
+      color: #57cadd;
+      font-size: 16px;
+      text-align: right;
+      display: none;
+      @include mq(md) {
+        display: inline-block;
+      }
+      @include mq(xs) {
+        display: inline-block;
+      }
+    }
+  }
+
+  ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: -120px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background: #fff;
+    @include mq(md) {
+      left: -60px;
+      top: 100%;
+      z-index: 10;
+    }
+    @include mq(xs) {
+      left: -60px;
+      top: 100%;
+      z-index: 10;
+    }
+
+    li {
+      padding: 10px 20px;
+      width: 170px;
+
+      &:hover {
+        > a {
+          color: $theme-color;
+        }
+      }
+
+      a {
+        color: #466578;
+
+        i {
+          margin-right: 5px;
+          background: $theme-color;
+          color: #fff;
+          height: 30px;
+          width: 30px;
+          line-height: 30px;
+          text-align: center;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+}
+
+.banner-area {
+  background-position: bottom center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 470px;
+  @include mq(lg) {
+    background-position: bottom left;
+    height: 400px;
+  }
+  @include mq(md) {
+    background-position: bottom left;
+    height: 345px;
+  }
+  @include mq(xs) {
+    background-position: bottom left;
+    height: 210px;
+  }
+}
+
+.banner-wrap {
+  position: relative;
+  .banner-img-items {
+    .banner-img-btn {
+      position: absolute;
+      top: 0;
+      left: 65px;
+      display: inline-block;
+      background: #b8b8ba;
+      color: #002b46;
+      font-size: 18px;
+      font-weight: 500;
+      padding: 5px;
+      border-radius: 5px;
+      width: 85px;
+      text-align: center;
+      @include mq(lg) {
+        font-size: 16px;
+        width: 75px;
+        top: 45px;
+        left: 25px;
+      }
+      @include mq(md) {
+        font-size: 16px;
+        width: 75px;
+        top: 200px;
+        left: 240px;
+      }
+    }
+    .banner-img-content {
+      color: #fff;
+      font-size: 88px;
+      font-weight: 500;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      margin-bottom: 0;
+      @include mq(lg) {
+        font-size: 65px;
+      }
+      @include mq(md) {
+        font-size: 60px;
+        top: 150px;
+      }
+      @include mq(xs) {
+        font-size: 34px;
+        top: 100px;
+      }
+      br {
+        @include mq(xs) {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.banner-area {
+  .trials-banner {
+    margin-top: 200px;
+    @include mq(lg) {
+      margin-top: 150px;
+    }
+    @include mq(md) {
+      margin-top: 0;
+    }
+    .guide-info.guide-info-2 {
+      padding: 0;
+      width: 281px;
+      height: 203px;
+      @include mq(lg) {
+      }
+      @include mq(md) {
+      }
+      i {
+        font-size: 30px;
+      }
+      .persent {
+        padding: 36px 0 0 36px;
+        span {
+          font-size: 100px;
+          font-weight: 200;
+          line-height: 0.33;
+        }
+      }
+      p {
+        margin-left: 65px;
+        margin-top: -5px;
+      }
+    }
+  }
+}
+
+.foliar-fertilizer-area {
+  background: #f8f8f8;
+}
+
+.section-title {
+  .title-trials {
+    font-size: 32px;
+    @include mq(lg){
+      font-size: 28px;
+    }
+    @include mq(md){
+      font-size: 24px;
+    }
+    @include mq(xs){
+      font-size: 20px;
+    }
+  }
+  .title-obj{
+    font-size: 48px;
+    @include mq(lg){
+      font-size: 40px;
+    }
+    @include mq(md){
+      font-size: 32px;
+    }
+    @include mq(xs){
+      font-size: 28px;
+    }
+  }
+  .title-trial-details{
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    @include mq(md){
+      margin-bottom: 20px;
+    }
+    @include mq(xs){
+      font-size: 20px;
+      margin-bottom: 5px;
+    }
+  }
+  .title-treatments{
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    @include mq(xs){
+      font-size: 20px;
+      margin-bottom: 5px;
+    }
+  }
+}
+
+.fertilizer-btn-wrap {
+  a.fertilizer-btn.txt-underline {
+    text-decoration: underline;
+  }
+  .fertilizer-btn {
+    display: inline-block;
+    color: #466578;
+    font-size: 18px;
+    transition: 0.3s;
+    width: 100%;
+
+    @include mq(xs) {
+      width: 100%;
+      text-align: left;
+    }
+
+    &.active,
+    &:hover {
+      color: #00b5d3;
+      i {
+        color: #00b5d3;
+      }
+    }
+
+    i {
+      color: #ee8897;
+      margin-right: 5px;
+    }
+  }
+}
+
+.brand-navigation-area {
+  .trials-banner {
+    .guide-info.guide-info-2 {
+      i {
+        font-size: 28px;
+      }
+    }
+  }
+}
+
+.brand-navigation {
+  &.big-font {
+    ul {
+      li {
+        margin-right: 60px;
+        @include mq(lg) {
+          margin-right: 40px;
+        }
+        @include mq(md) {
+          margin-right: 32px;
+        }
+        @include mq(xs) {
+          margin-right: 10px;
+        }
+        a {
+          font-size: 24px;
+          font-weight: 500;
+          @include mq(md) {
+            font-size: 18px;
+          }
+          @include mq(xs) {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      display: inline-block;
+      margin-right: 40px;
+      @include mq(xs) {
+        margin-right: 15px;
+      }
+
+      a {
+        display: inline-block;
+        font-size: 18px;
+        color: #333;
+        padding: 30px 0;
+        border-bottom: 3px solid transparent;
+        @include mq(xs) {
+          font-size: 16px;
+        }
+
+        &:hover {
+          color: $theme-color;
+          border-color: $theme-color;
+        }
+      }
+    }
+  }
+}
+
+.brand-navigation-mobile {
+  .brand-navigation-info {
+    font-size: 16px;
+  }
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    li {
+      margin-bottom: 5px;
+      a {
+        color: #002b46;
+        text-decoration: underline;
+        text-transform: capitalize;
+      }
+    }
+  }
+}
+
+.crop-wrapper {
+  margin-bottom: 20px;
+  .crop-title {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+  a {
+    font-size: 16px;
+    color: #002b46;
+    text-decoration: underline;
+  }
+  span {
+    font-size: 16px;
+  }
+}
+
+.assessments-wrapper {
+  margin-bottom: 15px;
+  .assessments-title {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+  a {
+    font-size: 16px;
+  }
+  span {
+    font-size: 16px;
+  }
+}
+
+.section-title.big-font {
+  @include mq(xs) {
+    margin-bottom: 35px;
+  }
+  .title {
+    font-size: 48px;
+    @include mq(lg) {
+      font-size: 42px;
+    }
+    @include mq(md) {
+      font-size: 36px;
+    }
+    @include mq(xs) {
+      font-size: 28px;
+    }
+  }
+  p {
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 30px;
+    @include mq(lg) {
+      font-size: 22px;
+    }
+    @include mq(md) {
+      font-size: 18px;
+    }
+    @include mq(xs) {
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+  }
+}
+
+.agromaster-area {
+  background: #fdfdfd;
+}
+
+.how-to-use-area-2 {
+  background: #f8f8f8;
+}
+
+.guide-info.guide-info-2.small-icon {
+  h3 {
+    font-size: 40px;
+  }
+  .persent {
+    i {
+      font-size: 28px;
+    }
+  }
+}
+
+.agromaster-wrap {
+  img {
+    margin-bottom: 40px;
+    @include mq(xs) {
+      margin-bottom: 20px;
+      width: 280px;
+    }
+  }
+  .agromaster-content {
+    .agromaster-title {
+      font-size: 20px;
+      padding-right: 10px;
+      margin-bottom: 5px;
+    }
+    .agromaster-desc {
+      font-weight: 500;
+      @include mq(md) {
+        font-size: 16px;
+      }
+      @include mq(xs) {
+        font-size: 16px;
+        margin-bottom: 0;
+      }
+    }
+    a {
+      color: #333;
+      font-size: 18px;
+      font-weight: 500;
+      text-decoration: underline;
+      &:hover {
+        color: #00b5d3;
+      }
+      @include mq(md) {
+        font-size: 16px;
+      }
+      @include mq(xs) {
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+.agromaster-img {
+  text-align: end;
+  @include mq(xs) {
+    text-align: center;
+  }
+  img {
+    @include mq(xs) {
+      display: none;
+      margin: 0 auto;
+      margin-bottom: 20px;
+      width: 180px;
+    }
+  }
+}
+
+.treatments-title-wrap {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+}
+
+.treatments-list {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+  @include mq(md) {
+    display: block;
+  }
+  @include mq(xs) {
+    display: block;
+  }
+
+  .treaments-wrap {
+    @include mq(md) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    @include mq(xs) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .treatments-title {
+      @include mq(xs) {
+        margin-bottom: 0;
+        font-size: 16px;
+      }
+      @include mq(md) {
+        margin-bottom: 0;
+      }
+    }
+    span {
+      @include mq(md) {
+        text-align: right;
+      }
+      @include mq(xs) {
+        font-size: 16px;
+        text-align: right;
+      }
+    }
+  }
+  .treatments-wrap.mb-20 h5{
+    font-size: 18px;
+    font-weight: 500;
+    @include mq(xs){
+      font-size: 16px;
+    }
+    br{
+      display: block;
+    }
+  }
+}
+
+.treatments-title-blue {
+  color: #6be3f3;
+  font-size: 18px;
+  font-weight: 700;
+  @include mq(xs){
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+}
+
+.treatments-title {
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.treaments-results {
+  font-weight: 500;
+  font-size: 18px;
+}
+
+h4.treatments-result-tilte {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.border-bottom-2 {
+  border-bottom: 1px solid #002456;
+}
+
+.trial-details-wrap {
+  margin-bottom: 30px;
+  @include mq(xs) {
+    margin-bottom: 20px;
+  }
+  .blue-title {
+    font-size: 18px;
+    font-weight: 500;
+    color: #00b5d3;
+    margin-bottom: 5px;
+    @include mq(xs){
+      font-size: 16px;
+      margin-bottom: 0;
+    }
+  }
+  span {
+    font-size: 18px;
+    font-weight: 500;
+    color: #002c45;
+    @include mq(xs){
+      font-size: 16px;
+    }
+  }
+}
+
+.results-wrrapers {
+  .results-title {
+    font-size: 18px;
+    font-weight: 500;
+  }
+  .distribuiton-items-1 {
+    span {
+      font-size: 18px;
+      font-weight: 500;
+      i {
+        background: #ea5167;
+        color: #ea5167;
+        border-radius: 50%;
+        font-size: 12px;
+        margin-right: 10px;
+      }
+    }
+  }
+  .distribuiton-items-2 {
+    span {
+      font-size: 18px;
+      font-weight: 500;
+      i {
+        background: #00b5d3;
+        color: #00b5d3;
+        border-radius: 50%;
+        font-size: 12px;
+        margin-right: 10px;
+      }
+    }
+  }
+}
+
+.distribution-img {
+  img {
+    border-radius: 5px;
+  }
+}
+
+.white-title {
+  .title {
+    color: #fff;
+  }
+  p {
+    color: #fff;
+  }
+  span {
+    color: #fff;
+    font-size: 16px;
+  }
+}
+
+.how-to-use-img {
+  position: relative;
+  margin-bottom: 15px;
+  @include mq(lg) {
+    margin-bottom: 30px;
+  }
+  @include mq(md) {
+    margin-bottom: 0;
+  }
+  @include mq(xs) {
+    margin-bottom: 0;
+  }
+
+  img {
+    border-radius: 5px;
+    width: 100%;
+    margin-bottom: 3px;
+  }
+
+  .heading-title {
+    position: absolute;
+    left: 30px;
+    top: 50px;
+    color: #fff;
+    font-size: 34px;
+    font-weight: 500;
+    @include mq(lg) {
+      font-size: 33px;
+      left: 28px;
+      top: 44px;
+    }
+    @include mq(md) {
+      font-size: 24px;
+      left: 23px;
+      top: 33px;
+    }
+    @include mq(xs) {
+      font-size: 12px;
+      left: 12px;
+      top: 18px;
+    }
+  }
+
+  .video-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    background: #00b5d3;
+    text-align: center;
+    height: 130px;
+    width: 130px;
+    line-height: 130px;
+    @include mq(md) {
+      height: 85px;
+      width: 85px;
+      line-height: 85px;
+    }
+    @include mq(xs) {
+      height: 35px;
+      width: 35px;
+      line-height: 35px;
+    }
+
+    a {
+      color: #fff;
+      font-size: 55px;
+      @include mq(md) {
+        font-size: 32px;
+      }
+      @include mq(xs) {
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+.img-title-btm{
+  @include mq(xs){
+    font-size: 16px;
+  }
+}
+
+.trails-area {
+  .section-title {
+    @include mq(xs) {
+      text-align: left !important;
+    }
+  }
+  .read-more-btn {
+    @include mq(xs) {
+      width: 100%;
+    }
+  }
+}

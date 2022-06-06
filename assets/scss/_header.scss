@@ -1,0 +1,259 @@
+@use "common" as *;
+
+.header-area {
+  background: #F3F3F3;
+  position: relative;
+  padding: 0 85px;
+  @include mq(xl){
+    padding: 0;
+  }
+  @include mq(lg){
+    padding: 10px 0;
+  }
+  @include mq(md){
+    padding: 10px 0;
+  }
+  @include mq(xs){
+    padding: 10px 0;
+  }
+}
+
+.main-menu {
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      display: inline-block;
+
+      &:hover {
+        > a {
+          background: #fff;
+          color: $theme-color;
+
+          &:before {
+            left: 20px;
+            right: 20px;
+            visibility: visible;
+            opacity: 1;
+          }
+        }
+      }
+
+      a {
+        display: block;
+        padding: 15px 20px;
+        color: #333;
+        text-transform: capitalize;
+        font-size: 20px;
+        position: relative;
+
+        &:before {
+          content: "";
+          position: absolute;
+          left: 50%;
+          bottom: 5px;
+          right: 50%;
+          height: 2px;
+          background: $theme-color;
+          visibility: hidden;
+          opacity: 0;
+          @include transition(0.3s);
+        }
+      }
+    }
+
+    .has-mega-dropdown {
+      &:hover {
+        .mega-menu {
+          visibility: visible;
+          opacity: 1;
+        }
+      }
+
+      .mega-menu {
+        position: absolute;
+        left: 0;
+        top: 100%;
+        background: #fff;
+        width: 100%;
+        padding: 10px 85px;
+        visibility: hidden;
+        opacity: 0;
+        z-index: 99;
+        @include transition(0.3s);
+        @include mq(xl){
+          padding: 10px 0;
+        }
+
+        .container-fluid {
+          padding: 0 15px;
+        }
+
+        .mega-sub-menu {
+          display: inline-block;
+
+          li {
+            margin-right: 30px;
+
+            &:hover {
+              a {
+                background: transparent;
+              }
+            }
+
+            a {
+              padding: 10px 0;
+              font-size: 16px;
+
+              &:before {
+                display: none;
+              }
+            }
+          }
+        }
+
+        .social-link {
+          display: inline-block;
+
+          li {
+            margin-right: 20px;
+
+            &:hover {
+              a {
+                background: transparent;
+              }
+            }
+
+            a {
+              width: 30px;
+              height: 30px;
+              line-height: 30px;
+              padding: 0;
+              font-size: 16px;
+              background: $theme-color;
+              color: #fff;
+              border-radius: 50%;
+              text-align: center;
+
+              &:before {
+                display: none;
+              }
+
+              &:hover {
+                background: #333;
+              }
+            }
+          }
+        }
+
+        .search {
+          display: inline-block;
+
+          a {
+            padding: 10px 0;
+            font-size: 16px;
+          }
+        }
+
+        .menu-btn {
+          display: inline-block;
+
+          a {
+            padding: 10px 15px;
+            font-size: 16px;
+            background: $theme-color;
+            color: #fff;
+            border-radius: 5px;
+
+            &:hover {
+              background: #333;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.attr-menu {
+  display: inline-block;
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      display: inline-block;
+      margin-right: 25px;
+
+      a {
+        display: block;
+        padding: 15px 0;
+        color: #333;
+        text-transform: capitalize;
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+.language {
+  display: inline-block;
+  position: relative;
+
+  span {
+    color: #333;
+    font-size: 16px;
+    padding: 15px 0;
+    display: block;
+    cursor: pointer;
+
+    img {
+      margin-right: 5px;
+      border-radius: 50%;
+    }
+  }
+
+  &:hover {
+    ul {
+      visibility: visible;
+      opacity: 1;
+      top: 100%;
+    }
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 5px 0;
+    position: absolute;
+    right: 0;
+    top: 120%;
+    z-index: 99;
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, .15);
+    min-width: 120px;
+    visibility: hidden;
+    opacity: 0;
+    @include transition(0.3s);
+
+    li {
+      display: block;
+
+      a {
+        display: block;
+        padding: 5px 15px;
+        font-size: 14px;
+        text-align: left;
+        color: #333;
+
+        &:hover {
+          background: argb($theme-color, 0.2);
+        }
+      }
+    }
+  }
+}

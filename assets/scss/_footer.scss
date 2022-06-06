@@ -1,0 +1,66 @@
+@use "common" as *;
+
+.footer-area {
+  background: #002B46;
+}
+
+.footer-separator {
+  border-bottom: 1px solid #fff;
+}
+
+.footer-social-link {
+  a {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    padding: 0;
+    font-size: 16px;
+    background: #00B5D3;
+    color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    margin-left: 10px;
+  }
+}
+
+.footer-language {
+  span {
+    color: #fff;
+  }
+
+  ul {
+    left: 0;
+    right: auto;
+  }
+}
+
+.feature-area {
+  background: #F2FBFD;
+}
+
+.widget-wrap {
+  .widget-title {
+    font-size: 24px;
+    color: #fff;
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      display: block;
+      margin-bottom: 5px;
+
+      a {
+        display: block;
+        color: #fff;
+        font-size: 16px;
+      }
+    }
+  }
+}
